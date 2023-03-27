@@ -78,15 +78,6 @@ namespace tdd_todo_list.CSharp.Test
         {
             Assert.IsTrue(this._core.createTodo("3 Description"));
         }
-        // test update
-        [Test]
-        public void updateTask()
-        {
-            Assert.IsTrue(this._core.updateTodo(0, "Some New Description", true));
-            Assert.AreEqual(this._core.getTodoById(0).id, 0);
-            Assert.AreEqual(this._core.getTodoById(0).description, "Some New Description");
-            Assert.AreEqual(this._core.getTodoById(0).status, true);
-        }
 
         [Test]
         public void deleteTodo()

@@ -26,24 +26,6 @@ namespace tdd_todo_list.CSharp.Main
             return success;
         }
 
-        public bool updateTodo(int id, string newDescription, bool newStatus)
-        {
-            bool success = false;
-            int index = findTodoIndex(id);
-            if (index >= 0)
-            {
-                success = true;
-                
-                if(newDescription != null)
-                {
-                    this.todoList[index].description = newDescription;
-                }
-                this.todoList[index].status = newStatus;
-            }
-
-            return success;
-        }
-
         public bool delete(int id)
         {
             bool success = false;
@@ -142,6 +124,7 @@ namespace tdd_todo_list.CSharp.Main
         }
 
         private Dictionary<int, Todo> todoList;
+
         private int findTodoIndex(int id)
         {
             int index = -1;
@@ -161,8 +144,8 @@ namespace tdd_todo_list.CSharp.Main
     {
         public Todo() { this._description = "";  this._status = false; }
         public int id { 
-            get { return this._id; } 
-            set { this._id = value; } 
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         public string description
@@ -177,10 +160,9 @@ namespace tdd_todo_list.CSharp.Main
             set { this._status = value; }
         }
 
-
-
         private int _id;
         private string _description;
         private bool _status;
     }
+
 }
